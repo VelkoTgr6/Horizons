@@ -1,8 +1,8 @@
-name: Build and Run Tests
+name: Build and Run Integration Tests
 
 on:
   push:
-    branches: [ "develop" ]
+    branches: [ "staging" ]
 
 jobs:
   build_unit_tests:
@@ -21,4 +21,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Execute Unit Tests
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test Horizons.Tests.Integration/Horizons.Tests.Integration.csproj --no-build --verbosity normal
